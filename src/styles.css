@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body { height: 100%;}
+body { margin: 0; overflow-x: hidden;}
+.bgi{
+    background: url('./assets/images/image 4.png');
+    background-size: contain;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+p{
+    margin: 0;
+}
+*{
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.bg3{
+    background: url('./assets/images/Rectangle 16.png');
+    background-size: contain;
+}
+.bg2{
+    background: url('./assets/images/Rectangle 231.png');
+    background-size: contain;
+}
+.bg4{
+    background: url('./assets/images/bg4.png');
+    background-size: contain;
+}
+.image{
+    object-fit: cover;
+}
+.slide{
+    left: 0;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.h{
+    height: 220px;
+}
+.mat-icon {
+    -webkit-user-select: none;
+    user-select: none;
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+}
+/* .ml-\[10\%\] {
+    margin-left: 4%;
+    color: green;
+    font-size: xxx-large;
+    height: fit-content;
+} */

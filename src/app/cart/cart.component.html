@@ -1,0 +1,67 @@
+<section (window:load)="loadData()" class="w-full flex flex-col h-fit">
+   <app-navbar></app-navbar>
+   <!-- <mat-icon>keyboard_backspace</mat-icon> -->
+   <span (click)="clear()" class="ml-[4%] text-4xl font-bold cursor-pointer material-symbols-outlined text-[#1E9658]" routerLink="/menu">
+    arrow_back
+    </span>
+   <header class="w-full h-fit py-[70px] flex flex-wrap items-center justify-center">
+        <section class="w-[95%] h-fit flex flex-wrap items-center justify-center mobile:gap-[30px] gap-[5%]" *ngFor="let tempt of temp">
+            <img class="w-[48%] mobile:w-[95%]" src={{tempt.thumbImage}} alt="">
+            <div class="flex flex-col items-start justify-center w-[42%] mobile:w-full mobile:px-[15px] gap-[14px] h-fit">
+                <span class="text-[45px] leading-[40px] flex items-center justify-between w-full">
+                   {{tempt.title}}
+                    <img src="./assets/images/Frame 79.png" alt="">
+                </span>
+                <p class="text-[22px] w-[64%] mobile:w-[95%] font-light leading-[24px]">Bite into the fluffy, sweet {{tempt.title}}, and savor the amazing flavor it delivers.</p>
+                <span class="text-[32px]">{{tempt.price}} per pack</span>
+                <div class="flex items-center justify-center pt-[15px] gap-[20px]">
+                    <span class="flex items-end justify-center gap-[20px]">
+                        <div class="flex flex-col">
+                        <p>Packs</p>
+                        <div class="flex list-none items-center justify-center gap-[10px]">
+                            <!-- <span (click)="minus()" class="w-fit cursor-pointer h-fit px-[10px] py-[2px] border-[1.5px] text-[#1E9658] text-xl font-semibold border-[#1E9658]">-</span>
+                            <li>{{noOf.value}}</li>
+                            <span (click)="ad()" class="w-fit cursor-pointer h-fit px-[10px] py-[2px] border-[1.5px] text-[#1E9658] text-xl font-semibold border-[#1E9658]">+</span> -->
+                        </div>
+                    </div>
+                        <button (click)="addToCart(product)" class="w-fit h-fit px-[25px] py-[10px] text-[#1E9658] border-[1px] border-[#1E9658]" type="button"><span class="mobile:hidden flex">Add to cart</span></button>
+                        <button class="w-fit mobile:text-[15px] h-fit px-[25px] py-[17px] bg-[#1E9658] text-white ">Buy now</button>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="w-full h-fit pt-[90px] flex px-[30px] flex-wrap justify-between items-center">
+            <div class="flex flex-col gap-[10px] py-[20px] w-[394px] mobile:w-full">
+                <img class="w-[400px]" src="./assets/images/b1 (1).png" alt="">
+                <span class="flex items-center justify-between w-full">
+                    <ul>
+                        <li class="">Akara Crepes</li>
+                        <li class="text-lg font-semibold">N2, 000</li>
+                    </ul>
+                    <button class="w-fit h-fit text-white px-[15px] py-[7px] bg-[#1E9658]">Add to Cart</button>
+                </span>
+            </div>
+            <div class="flex flex-col gap-[10px] py-[20px] w-[394px] mobile:w-full">
+                <img class="w-[400px]" src="./assets/images/b1 (2).png" alt="">
+                <span class="flex items-center justify-between w-full">
+                    <ul>
+                        <li class="">Akara with pepper sauce</li>
+                        <li class="text-lg font-semibold">N3, 500</li>
+                    </ul>
+                    <button class="w-fit h-fit text-white px-[15px] py-[7px] bg-[#1E9658]">Add to Cart</button>
+                </span>
+            </div>
+            <div class="flex flex-col gap-[10px] py-[20px] w-[394px] mobile:w-full">
+                <img class="w-[400px]" src="./assets/images/b1 (3).png" alt="">
+                <span class="flex items-center justify-between w-full">
+                    <ul>
+                        <li class="">Akara Pancake</li>
+                        <li class="text-lg font-semibold">N3, 000</li>
+                    </ul>
+                    <button class="w-fit h-fit text-white px-[15px] py-[7px] bg-[#1E9658]">Add to Cart</button>
+                </span>
+            </div>
+        </section>
+    </header>
+    <app-footer />
+</section>    

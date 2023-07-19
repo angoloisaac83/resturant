@@ -1,0 +1,32 @@
+<nav id="navbar" class="flex transition-all duration-1000 w-full justify-between items-center px-[15px] py-[17px]">
+    <img src="./assets/images/Rune Deserts.png" alt="Logo">
+    <ul class="flex mobile:hidden items-center justify-center cursor-pointer gap-[60px]">
+        <li routerLink="" class="pb-[2px]">Home</li>
+        <li class="pb-[2px]" routerLink="about">About</li>
+        <li routerLink="/menu" class="pb-[2px]">Menu</li>
+        <li routerLink="/blog" class="pb-[2px]">Blog</li>
+    </ul>
+    <ul class="flex mobile:hidden items-center justify-center gap-[10px]">
+        <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+        <mat-icon class="text-[#1E9658]" matBadge={{noItems}} routerLink="/addtocart">shopping_cart</mat-icon>
+    </ul>
+    <span (click)="show()" *ngIf="toggle" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+        <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+        <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+        <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+    </span>
+    <span (click)="show()" *ngIf="showing" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+        <li class="w-[27px] rotate-[-45deg] h-[3px] bg-[black] rounded-full"></li>
+        <li class="w-[27px] rotate-[45deg] mt-[-6px] h-[3px] bg-[black] rounded-full"></li>
+    </span>
+    <div class="fixed pt-[30%] left-[-80%] transition-all duration-1000 h-[100vh] z-[100] top-0 w-[80%] py-[10px] bg-[rgb(255,255,255)] drop-shadow-2xl mx-auto text-black" [class.slide]="showing">
+        <ul class="flex flex-col items-start pl-[20px] justify-center text-[22px] cursor-pointer gap-[30px]">
+            <li routerLink="" class="pb-[2px]">Home</li>
+            <li class="pb-[2px]" routerLink="about">About</li>
+            <li routerLink="/menu" class="pb-[2px]">Menu</li>
+            <li routerLink="/blog" class="pb-[2px]">Blog</li>
+            <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+        <mat-icon class="text-[#1E9658]" matBadge="1" >shopping_cart</mat-icon>
+        </ul>
+    </div>
+</nav>

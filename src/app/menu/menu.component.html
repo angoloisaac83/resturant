@@ -1,0 +1,111 @@
+<section (window:load)="loadData()" class="w-full flex flex-col h-fit">
+    <nav id="navbar" class="flex mobile:shadow-lg transition-all duration-1000 z-[100] w-full justify-between items-center px-[15px] py-[17px]">
+        <img src="./assets/images/Rune Deserts.png" alt="Logo">
+        <ul class="flex mobile:hidden items-center justify-center cursor-pointer gap-[60px]">
+            <li routerLink="" class="pb-[2px]">Home</li>
+            <li class="pb-[2px]" routerLink="/about">About</li>
+            <li routerLink="/menu" class="pb-[2px] border-b-[2px] border-[#1E9658]">Menu</li>
+            <li routerLink="/blog" class="pb-[2px]">Blog</li>
+        </ul>
+        <ul class="flex mobile:hidden items-center justify-center gap-[10px]">
+            <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+            <mat-icon class="text-[#1E9658]" matBadge={{noItems}} routerLink="/addtocart">shopping_cart</mat-icon>
+        </ul>
+        <span (click)="show()" *ngIf="toggle" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <span (click)="show()" *ngIf="showing" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] rotate-[-45deg] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] rotate-[45deg] mt-[-6px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <div class="fixed pt-[30%] left-[-80%] transition-all duration-1000 h-[100vh] z-[100] top-0 w-[80%] py-[10px] bg-[rgb(255,255,255)] drop-shadow-2xl mx-auto text-black" [class.slide]="showing">
+            <ul class="flex flex-col items-start pl-[20px] justify-center text-[22px] cursor-pointer gap-[30px]">
+                <li routerLink="" class="pb-[2px]">Home</li>
+                <li class="pb-[2px]" routerLink="about">About</li>
+                <li routerLink="/menu" class="pb-[2px]">Menu</li>
+                <li routerLink="/blog" class="pb-[2px]">Blog</li>
+                <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+            <mat-icon class="text-[#1E9658]" matBadge="1" routerLink="/addtocart">shopping_cart</mat-icon>
+            </ul>
+        </div>
+    </nav>
+    <span class="text-4xl pl-[30px] py-[20px] font-semibold text-[#1E9658]">
+        Dessert Menu
+    </span>
+     <p class=" pl-[30px] py-[20px] text-xl" routerLink="/addtocart">Special Menu</p>
+    <header class="w-full h-fit px-[30px] flex flex-col justify-between items-start">
+       <section class="w-full h-fit flex flex-wrap justify-between items-center">
+        <div class="flex mobile:hidden flex-col gap-[10px] py-[20px]" *ngFor="let product of products">
+            <img class="w-[400px]" src={{product.thumbImage}} alt="">
+            <span class="flex items-center justify-between w-full">
+                <ul>
+                    <li class="text-[#1E9658] cursor-pointer" (mouseover)="hovs=!hovs" (mouseout)="hovs=!hovs">{{product.title}}</li>
+                    <li class="text-lg font-semibold">{{product.price}}</li>
+                </ul>
+                <button class="w-fit h-fit text-white hover:scale-[1.2] transition-all duration-700 px-[15px] py-[7px] bg-[#1E9658]" routerLink="/cart" (click)="move(product)">View Product</button>
+            </span>
+            <div [class.h]="hovs" class="w-[300px] overflow-hidden h-[0px] flex flex-col items-start justify-center transition-all duration-700 pl-[20px] shadow-xl mt-[-10%] bg-white absolute ml-[8%]">
+                <h1>{{product.title}}</h1>
+                <p class="text-[18px] w-[94%] mobile:w-[95%] font-light leading-[24px]">Bite into the fluffy, sweet {{product.title}}, and savor the amazing flavor it delivers.</p>
+            </div>
+        </div>
+        <ng-image-slider [images]="products" class="w-full n hidden mobile:flex" #nav></ng-image-slider>
+    </section>
+        <p class=" pl-[30px] py-[20px] text-xl">Appetizers</p>
+        <section class="w-full h-fit flex flex-wrap justify-between items-center">
+        <!-- <div class="flex flex-col gap-[10px] py-[20px] mobile:hidden" *ngFor="let ars of array1">
+            <img class="w-[400px]" src={{ars.thumbImage}} alt="">
+            <span class="flex items-center justify-between w-full">
+                <ul>
+                    <li class="text-[#1E9658]">{{ars.title}}</li>
+                    <li class="text-lg font-semibold">{{ars.price}}</li>
+                </ul>
+                <button routerLink="/cart" class="w-fit h-fit text-white px-[15px] py-[7px] bg-[#1E9658]">{{ars.button}}</button>
+            </span>
+        </div>
+        <ng-image-slider [images]="array1" class="w-full hidden mobile:flex" #nav></ng-image-slider>
+    </section>
+    <p class=" pl-[30px] py-[20px] text-xl">Vegan  Desserts</p>
+    <section class="w-full h-fit flex flex-wrap justify-between items-center">
+        <div class="flex flex-col gap-[10px] py-[20px] mobile:hidden" *ngFor="let ars of array2">
+            <img class="w-[400px]" src={{ars.thumbImage}} alt="">
+            <span class="flex items-center justify-between w-full">
+                <ul>
+                    <li class="text-[#1E9658]">{{ars.title}}</li>
+                    <li class="text-lg font-semibold">{{ars.price}}</li>
+                </ul>
+                <button routerLink="/cart" class="w-fit h-fit text-white px-[15px] py-[7px] bg-[#1E9658]">{{ars.button}}</button>
+            </span>
+        </div>
+        <ng-image-slider [images]="array2" class="w-full hidden mobile:flex" #nav></ng-image-slider> -->
+    </section>
+    </header>
+    <footer class="w-full py-[60px] h-fit flex flex-wrap justify-between items-center px-[50px]">
+        <ul class="flex flex-col text-[17px] gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">Menu</p>
+            <li>How to order</li>
+            <li>Where we deliver</li>
+            <li>FAQs</li>
+            <li>Contact</li>
+        </ul>
+        <ul class="flex flex-col text-[17px] gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">About</p>
+            <li>Why Rune?</li>
+            <li>Where we deliver</li>
+            <li>FAQs</li>
+        </ul>
+        <ul class="flex flex-col text-[17px] gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">Contact us</p>
+            <li class="flex items-center justify-center w-[245px] gap-[10px]"><img src="./assets/images/Frame.png" alt=""> 30 Kakawa St, Victoria Island, 
+                Lagos, Nigeria.</li>
+            <li class="flex items-start  justify-start w-[245px] gap-[10px]"><img src="./assets/images/Vector.png">+234  9 108 6019</li>
+            <li class="flex items-start  justify-start w-[245px] gap-[10px]"><img src="./assets/images/Frame (1).png">www.runeNg.com</li>
+        </ul>
+        <ul class="flex flex-col gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">Follow Us</p>
+            <img src="./assets/images/Frame 13.png" alt="">
+        </ul>
+    </footer>
+</section>

@@ -1,0 +1,24 @@
+<section>
+    <app-navbar></app-navbar>
+    <header class="w-full h-fit flex flex-col gap-[17px] items-center justify-center pt-[80px]">
+         <span class="text-4xl font-medium py-[30px]">Payment Method</span>
+         <ul class="flex items-center justify-center gap-[10%] mobile:w-full w-[625px]">
+            <li class="text-[#1E9658] text-lg mobile:text-[15px] w-[40%] h-fit pb-[10px] text-center">Bank Transfer</li>
+            <li class="text-[#1E9658] border-b-[1.5px] border-[#1E9658] text-lg mobile:text-[15px] w-[40%] h-fit pb-[10px] text-center">Credit/Debit card</li>
+         </ul>
+         <div class="w-fit flex items-center mobile:gap-[3%] gap-[10%] pt-[20px] justify-center">
+            <img class="w-[138px] mobile:w-[80px]" src="./assets/images/master.png" alt="">
+            <img class="w-[138px] mobile:w-[80px]" src="./assets/images/visa 1.png" alt="">
+            <img class="w-[138px] mobile:w-[80px]" class="object-contain" src="./assets/images/verve.png" alt="">
+         </div>
+         <form action="" class="flex mobile:w-[90%] w-[505px] flex-col items-center justify-center gap-[20px]" method="post">
+            <input class="w-full h-fit placeholder:text-[gray] bg-[#EBEBEB] py-[12px] pl-[15px]" placeholder="Payment amount" type="text" name="" id="">
+            <input class="w-full h-fit placeholder:text-[gray] bg-[#EBEBEB] py-[12px] pl-[15px]" placeholder="Name on card" type="text" name="" id="">
+            <input class="w-full h-fit placeholder:text-[gray] bg-[#EBEBEB] py-[12px] pl-[15px]" placeholder="Card number" type="text" name="" id="">
+            <input class="w-full h-fit placeholder:text-[gray] bg-[#EBEBEB] py-[12px] pl-[15px]" placeholder="Expiry date(MM/YY)" type="text" name="" id="">
+            <input class="w-full h-fit placeholder:text-[gray] bg-[#EBEBEB] py-[12px] pl-[15px]" placeholder="CVV" type="text" name="" id="">
+            <button class="text-white w-full py-[12px] bg-[#1E9658]">Confirm payment</button>
+         </form>
+    </header>
+    <app-footer></app-footer>
+</section>

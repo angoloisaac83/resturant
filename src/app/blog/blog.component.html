@@ -1,0 +1,118 @@
+<section class="w-full flex flex-col h-fit">
+    <nav id="navbar" class="flex transition-all duration-1000 w-full justify-between items-center px-[15px] py-[17px]">
+        <img src="./assets/images/Rune Deserts.png" alt="Logo">
+        <ul class="flex mobile:hidden items-center justify-center cursor-pointer gap-[60px]">
+            <li routerLink="" class="pb-[2px]">Home</li>
+            <li class="pb-[2px]" routerLink="about">About</li>
+            <li routerLink="/menu" class="pb-[2px]">Menu</li>
+            <li routerLink="/blog" class="pb-[2px] border-b-[2px] border-[#1E9658]">Blog</li>
+        </ul>
+        <ul class="flex mobile:hidden items-center justify-center gap-[10px]">
+            <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+            <mat-icon class="text-[#1E9658]" matBadge={{session.value}} >shopping_cart</mat-icon>
+        </ul>
+        <span (click)="show()" *ngIf="toggle" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <span (click)="show()" *ngIf="showing" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] rotate-[-45deg] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] rotate-[45deg] mt-[-6px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <div class="fixed pt-[30%] left-[-80%] transition-all duration-1000 h-[100vh] z-[100] top-0 w-[80%] py-[10px] bg-[rgb(255,255,255)] drop-shadow-2xl mx-auto text-black" [class.slide]="showing">
+            <ul class="flex flex-col items-start pl-[20px] justify-center text-[22px] cursor-pointer gap-[30px]">
+                <li routerLink="" class="pb-[2px]">Home</li>
+                <li class="pb-[2px]" routerLink="about">About</li>
+                <li routerLink="/menu" class="pb-[2px]">Menu</li>
+                <li routerLink="/blog" class="pb-[2px]">Blog</li>
+                <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+            <mat-icon class="text-[#1E9658]" matBadge="1" >shopping_cart</mat-icon>
+            </ul>
+        </div>
+    </nav>
+    <header class="bg2 pl-[10%] mobile:pl-[0] flex flex-col text-center gap-[10px] text-white items-start justify-center h-[100vh] w-full">
+        <div class="w-[470px] mobile:w-[95%] m-auto text-start p-[35px] h-[350px] bg-[white] text-black">
+            <span class="text-[30px] leading-[40px] w-[50%]">Top tips on how to 
+                prepare Coconut Candy</span>
+                <p class="pt-[10px] text-[#6b6b6b]">Coconut candy is very easy to prepare if 
+                    you do not mind the process of 
+                    grating the coconut</p>
+                    <span class="flex items-center justify-start mt-[20%] mobile:mt-[10%] w-[100%]">
+                        <img src="./assets/images/Ellipse 1 (1).png" alt="">
+                        <ul class="pl-[20px]">
+                            <li class="font-medium">Louisa Moje</li>
+                            <li  class="text-[11px]">Sept 17, 2022</li>
+                        </ul>
+                        <span class="pl-[40%] mobile:pl-[20%] flex items-center justify-center gap-[14px]">
+                        <mat-icon class="hover:text-pink-500">favorite</mat-icon>
+                        <mat-icon class="text-black">turned_in_not</mat-icon>
+                    </span>
+                    </span>
+        </div>
+    </header>
+    <section class="w-full h-fit flex flex-col items-start pt-[30px] justify-center mobile:px-[15px] px-[40px]">
+        <form action="" class="text-white flex flex-wrap items-center justify-between py-[20px] px-[40px] mobile:w-full w-[65%] bg-[#1E9658]">
+            <p class="text-2xl">Newsletter</p>
+            <span class="flex items-center justify-center">
+                <input type="email" class="py-[10px] placeholder:text-[#1E9658] pl-[10px]" name="" id="" placeholder="Email">
+                <button class="py-[10px] px-[7px] text-white bg-[#2D2D2D]">Submit</button>
+            </span>
+        </form>
+        <section class="flex flex-wrap mobile:gap-[15px] items-center justify-between mobile:px-[0px] px-[20px] pt-[60px]">
+            <div class="flex flex-col items-center justify-center w-[32%] mobile:w-[98%] h-fit gap-[5px]">
+                <img src="./assets/images/g (1).png" alt="">
+                <ul>
+                    <li class="text-[11px]">May  20, 2023</li>
+                    <li class="text-xl font-semibold mobile:font-[] mobile:text-[18px]">How to make Egusi Brittle</li>
+                    <li>Egusi is also known as melon seeds and is typically toasted, blended and used to make soups and desserts. An example...</li>
+                    <button class="flex ml-[64%] mobile:ml-[58%] items-center justify-center gap-[10px] px-[10px] py-[6px] text-white bg-[#1E9658]">Read more<mat-icon>arrow_forward</mat-icon></button>
+                </ul>
+            </div>
+            <div class="flex flex-col items-center justify-center w-[32%] mobile:w-[98%] h-fit gap-[5px]">
+                <img src="./assets/images/g (2).png" alt="">
+                <ul>
+                    <li class="text-[11px]">May  12, 2023</li>
+                    <li class="text-xl font-semibold mobile:font-[] mobile:text-[18px]">Plantain Pancake Recipe</li>
+                    <li>Ripe plantains are a starchy and sweet vegetable which can be used in savory or sweet dishes, so we thought it was the perfect main ingredient for our...</li>
+                    <button class="flex ml-[64%] mobile:ml-[58%] mt-[10px] items-center justify-center gap-[10px] px-[10px] py-[6px] text-white bg-[#1E9658]">Read more<mat-icon>arrow_forward</mat-icon></button>
+                </ul>
+            </div>
+            <div class="flex flex-col items-center justify-center w-[32%] mobile:w-[98%] h-fit gap-[5px]">
+                <img src="./assets/images/g (3).png" alt="">
+                <ul>
+                    <li class="text-[11px]">April 27, 2023</li>
+                    <li class="text-xl font-semibold mobile:font-[] mobile:text-[18px]">Semolina Puff Puff in 15 Mins</li>
+                    <li>Semolina puff puff is made from semo flour, which is stickier than normal flour, and that is what makes it work better.. It reacts with yeast very fast and the dough... </li>
+                    <button class="flex ml-[64%] mobile:ml-[58%] mt-[10px] items-center justify-center gap-[10px] px-[10px] py-[6px] text-white bg-[#1E9658]">Read more<mat-icon>arrow_forward</mat-icon></button>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <footer class="w-full h-fit py-[60px] pt-[90px] flex flex-wrap justify-between items-center px-[50px]">
+        <ul class="flex flex-col text-[17px] gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">Menu</p>
+            <li>How to order</li>
+            <li>Where we deliver</li>
+            <li>FAQs</li>
+            <li>Contact</li>
+        </ul>
+        <ul class="flex flex-col text-[17px] gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">About</p>
+            <li>Why Rune?</li>
+            <li>Where we deliver</li>
+            <li>FAQs</li>
+        </ul>
+        <ul class="flex flex-col text-[17px] gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">Contact us</p>
+            <li class="flex items-center justify-center w-[245px] gap-[10px]"><img src="./assets/images/Frame.png" alt=""> 30 Kakawa St, Victoria Island, 
+                Lagos, Nigeria.</li>
+            <li class="flex items-start  justify-start w-[245px] gap-[10px]"><img src="./assets/images/Vector.png">+234  9 108 6019</li>
+            <li class="flex items-start  justify-start w-[245px] gap-[10px]"><img src="./assets/images/Frame (1).png">www.runeNg.com</li>
+        </ul>
+        <ul class="flex flex-col gap-[5px] text-[gray]">
+            <p class="pb-[10px] font-semibold text-black text-lg">Follow Us</p>
+            <img src="./assets/images/Frame 13.png" alt="">
+        </ul>
+    </footer>
+</section>

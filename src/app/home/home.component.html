@@ -1,0 +1,140 @@
+<section (window:load)="loadData()" class="w-full flex flex-col h-fit">
+    <nav id="navbar" class="flex transition-all duration-1000 w-full justify-between items-center px-[15px] py-[17px]">
+        <img src="./assets/images/Rune Deserts.png" alt="Logo">
+        <ul class="flex mobile:hidden items-center justify-center cursor-pointer gap-[60px]">
+            <li routerLink="" class="pb-[2px] border-b-[2px] border-[#1E9658]">Home</li>
+            <li class="pb-[2px]" routerLink="about">About</li>
+            <li routerLink="/menu" class="pb-[2px]">Menu</li>
+            <li routerLink="/blog" class="pb-[2px]">Blog</li>
+        </ul>
+        <ul class="flex mobile:hidden items-center justify-center gap-[10px]">
+            <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+            <mat-icon class="text-[#1E9658]" matBadge={{session.value}} >shopping_cart</mat-icon>
+        </ul>
+        <span (click)="show()" *ngIf="toggle" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <span (click)="show()" *ngIf="showing" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] rotate-[-45deg] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] rotate-[45deg] mt-[-6px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <div class="fixed pt-[30%] left-[-80%] transition-all duration-1000 h-[100vh] z-[100] top-0 w-[80%] py-[10px] bg-[rgb(255,255,255)] drop-shadow-2xl mx-auto text-black" [class.slide]="showing">
+            <ul class="flex flex-col items-start pl-[20px] justify-center text-[22px] cursor-pointer gap-[30px]">
+                <li routerLink="" class="pb-[2px]">Home</li>
+                <li class="pb-[2px]" routerLink="about">About</li>
+                <li routerLink="/menu" class="pb-[2px]">Menu</li>
+                <li routerLink="/blog" class="pb-[2px]">Blog</li>
+                <li class="cursor-pointer" routerLink="/contact">Contact Us</li>
+            <mat-icon class="text-[#1E9658]" matBadge="1" >shopping_cart</mat-icon>
+            </ul>
+        </div>
+    </nav>
+    <header class="bgi flex flex-col text-center gap-[10px] text-white items-center justify-center h-[100vh] w-full">
+        <span class="text-5xl mobile:text-4xl mobile:w-[89%] w-[59%] leading-[63px]">
+            Indulge In The Delicacies Of African Desserts 
+        </span>
+        <p class="text-[20px] px-[20px]">Sweeten Your Life With Our African Delicacies</p>
+        <button class="px-[13px] text-lg py-[7px] text-white bg-[#1E9658]">Order Now</button>
+    </header>
+    <div class="w-full px-[10px] flex text-center items-center justify-center bg-[#1E9658] text-white text-[15px] py-[20px]">
+        <p class="w-[73%]">Rune, Established in 2019 is a family owned, African dessert company. we are known for flavorful, real taste products, 
+            that conveys a sense of excitement and let you feel the taste of home.</p>
+    </div>
+    <section class="flex py-[30px] gap-[20px] flex-col items-center justify-center w-full">
+        <span class="text-4xl font-semibold text-[#1E9658]">
+            Our Products
+        </span>
+        <section class="w-[90%] mobile:w-[100%] items-center justify-between flex flex-wrap h-fit">
+            <div class="flex flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[365px] mobile:w-full" src="./assets/images/Rectangle 4.png" alt="">
+                <p class="absolute">Waina</p>
+            </div>
+            <div class="flex flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[365px] mobile:w-full" src="./assets/images/Rectangle 5.png" alt="">
+                <p class="absolute">Scented Poached Paw-paw</p>
+            </div>
+            <div class="flex flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[365px] mobile:w-full" src="./assets/images/Rectangle 6.png" alt="">
+                <p class="absolute">Beans & Plantain Waffles</p>
+            </div>
+            <div class="flex flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[365px] mobile:w-full" src="./assets/images/Rectangle 7.png" alt="">
+                <p class="absolute">Chocolate malva pudding</p>
+            </div>
+            <div class="flex flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[365px] mobile:w-full" src="./assets/images/Rectangle 8.png" alt="">
+                <p class="absolute">Peanut Butter Cookies</p>
+            </div>
+            <div class="flex flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[365px] mobile:w-full" src="./assets/images/Rectangle 9.png" alt="">
+                <p class="absolute">Vanilla Pancake</p>
+            </div>
+        </section>           
+        <span class="text-4xl mobile:pl-[20px] font-semibold text-[#1E9658]">
+            This Week Special Dessert
+            </span>
+        <section class="w-[95%] items-center h-[400px] justify-between flex flex-wrap">
+            <div class="flex w-[48%] mobile:w-full flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[100%] h-[350px]" src="./assets/images/Rectangle 11.png" alt="">
+                <p class="absolute text-xl">Puff Puff</p>
+            </div>
+            <div class="flex w-[48%] mobile:w-full flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[100%] h-[350px]" src="./assets/images/Rectangle 10.png" alt="">
+                <p class="absolute text-xl">Triffle</p>
+            </div>
+        </section>
+        <span class="text-4xl mobile:mt-[97%] pb-[12px] font-semibold text-[#1E9658]">
+            Popular Categories
+            </span>
+        <section class="w-[95%] items-center h-[300px] justify-between flex flex-wrap">
+            <div class="flex w-[30%] mobile:w-full flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[100%] h-[300px]" src="./assets/images/Rectangle 20.png" alt="">
+                <p class="absolute text-xl">Beju</p>
+            </div>
+            <div class="flex w-[30%] mobile:w-full flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[100%] h-[300px]" src="./assets/images/Rectangle 21.png" alt="">
+                <p class="absolute text-xl">Hot cross buns</p>
+            </div>
+            <div class="flex w-[30%] mobile:w-full flex-col text-white pb-[70px] items-center justify-end">
+                <img class="w-[100%] h-[300px]" src="./assets/images/Rectangle 22.png" alt="">
+                <p class="absolute text-xl">Shuku shuku</p>
+            </div>
+        </section>
+        <section class="px-[10px] flex mobile:mt-[200%] gap-[20px] flex-wrap items-center justify-between h-fit">
+            <div class="w-[48%] mobile:w-full flex flex-col justify-center gap-[12px] items-start">
+                <span class="text-[55px] mobile:text-[35px] mobile:leading-[50px] leading-[70px] pb-[12px] font-semibold text-[#1E9658]">
+                    Place an order and get your dessert delivered to your doorstep.
+                    </span>
+                    <p class="text-[30px] mobile:text-[20px] leading-[34px] mobile:w-full w-[75%]">Get in touch with us today and experience dessert done right!</p>
+                    <button class="px-[13px] text-lg py-[7px] text-white bg-[#1E9658]">Order Now</button>
+            </div>
+            <img class="w-[45%] mobile:w-full" src="./assets/images/Rectangle 23.png" alt="">
+        </section>
+        <section class="flex text-center flex-col items-center justify-center h-[80vh] gap-[100px] text-white bg3 mobile:w-full w-[94%] m-auto">
+            <span class="text-[60px] mobile:leading-[60px]">
+                Opening Hours
+            </span>
+            <div class="flex  mobile:flex-wrap items-center mobile:w-full justify-center gap-[40px]">
+                <ul class="flex flex-col gap-[18px]">
+                    <li class="text-[30px]">Monday - Thursday</li>
+                    <li class="text-[22px]">10AM - 9PM</li>
+                </ul>
+                <ul class="flex flex-col gap-[18px]">
+                    <li class="text-[30px]">Friday</li>
+                    <li class="text-[22px]">10AM - 12AM</li>
+                </ul>
+                <ul class="flex flex-col gap-[18px]">
+                    <li class="text-[30px]">Saturday</li>
+                    <li class="text-[22px]">10AM - 11PM</li>
+                </ul>
+                <ul class="flex flex-col gap-[18px]">
+                    <li class="text-[30px]">Sunday</li>
+                    <li class="text-[22px]">10AM-7PM</li>
+                </ul>
+            </div>
+        </section>
+        <app-footer></app-footer>
+    </section>
+</section>

@@ -1,0 +1,42 @@
+<section>
+    <nav id="navbar" class="flex transition-all duration-1000 w-full justify-between items-center px-[15px] py-[17px]">
+        <img src="./assets/images/Rune Deserts.png" alt="Logo">
+        <ul class="flex mobile:hidden items-center justify-center cursor-pointer gap-[60px]">
+            <li routerLink="" class="pb-[2px]">Home</li>
+            <li class="pb-[2px]" routerLink="about">About</li>
+            <li routerLink="/menu" class="pb-[2px]">Menu</li>
+            <li routerLink="/blog" class="pb-[2px]">Blog</li>
+        </ul>
+        <ul class="flex mobile:hidden items-center justify-center gap-[10px]">
+            <li class="cursor-pointer text-[#1E9658]" routerLink="/contact">Contact Us</li>
+            <mat-icon>search</mat-icon>
+        </ul>
+        <span (click)="show()" *ngIf="toggle" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <span (click)="show()" *ngIf="showing" class="w-fit list-none gap-[3px] h-fit hidden flex-col items-center justify-center mobile:flex">
+            <li class="w-[27px] rotate-[-45deg] h-[3px] bg-[black] rounded-full"></li>
+            <li class="w-[27px] rotate-[45deg] mt-[-6px] h-[3px] bg-[black] rounded-full"></li>
+        </span>
+        <div class="fixed top-[100px] ml-[10%] h-fit z-20 w-[80%] py-[10px] bg-[rgba(111,111,111,0.84)] mx-auto text-white" *ngIf="showing">
+            <ul class="flex flex-col items-start pl-[20px] justify-center cursor-pointer gap-[30px]">
+                <li routerLink="" class="pb-[2px] border-b-[2px] border-[#1E9658]">Home</li>
+                <li class="pb-[2px]" routerLink="about">About</li>
+                <li routerLink="/menu" class="pb-[2px]">Menu</li>
+                <li routerLink="/blog" class="pb-[2px]">Blog</li>
+            </ul>
+        </div>
+    </nav>
+    <header class="w-full flex flex-col h-fit items-center gap-[12px] justify-center py-[90px]">
+        <img class="w-[320px]" src="./assets/images/sucess.png" alt="">
+        <span class="pt-[30px] text-4xl font-semibold">
+            Payment Successful
+        </span>
+        <p class="w-[206px] text-center">Your payment was successful
+            Wait for your order to arrive</p>
+            <button class="w-[420px] py-[12px] text-xl h-fit text-white bg-[#1E9658]">Go back home</button>
+    </header>
+    <app-footer></app-footer>
+</section>
